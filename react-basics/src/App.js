@@ -11,10 +11,14 @@ import ImageDisplay from './components/03day/ImageDisplay';
 import DefaultandPropsType from './components/03day/DefaultandPropsType';
 import Stateinfun from './components/03day/Stateinfun';
 import CounterApp from './components/03day/CounterApp';
+import FetchTextBoxData from './components/04day/FetchTextBoxData';
+import Calculator from './components/04day/Calculator';
+import Form1 from './components/04day/Form1';
+import Form2 from './components/04day/Form2';
 function App() {
   return (
     <div className="container mt-5">
-        <h1 className='text-primary'>Hello JavaScript</h1>
+        <h1 className='text-primary'>Hello React</h1>
         {/* <h2>Welcome to React</h2>
         <p>Java</p> */}
         {/* <Firstfuncomp></Firstfuncomp> */}
@@ -39,7 +43,14 @@ function App() {
 
 
         {/* <Stateinfun/> */}
-        <CounterApp/>
+        {/* <CounterApp/> */}
+
+        {/* <FetchTextBoxData name="Ram"/> */}
+
+        {/* <Calculator/> */}
+
+        {/* <Form1/> */}
+        <Form2/>
     </div>
 
 
