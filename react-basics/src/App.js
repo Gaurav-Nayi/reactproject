@@ -1,7 +1,7 @@
 
 
 import './App.css';
-import React from 'react';
+import React, { useState } from 'react';
 import Firstfuncomp from './components/Firstfuncomp';
 import Firstclasscomp from './components/01day/Firstclasscomp';
 import Propsdemo from './components/02day/Propsdemo';
@@ -15,10 +15,35 @@ import FetchTextBoxData from './components/04day/FetchTextBoxData';
 import Calculator from './components/04day/Calculator';
 import Form1 from './components/04day/Form1';
 import Form2 from './components/04day/Form2';
+import ConditionalRendering from './components/05day/ConditionalRendering';
+import Sidebar from './components/Sidebar';
+import { Form, Route, Routes } from 'react-router-dom';
 function App() {
+  let [isLoggedIn,setIsLoggedIn]=useState
+  (true)    
   return (
-    <div className="container mt-5">
-        <h1 className='text-primary'>Hello React</h1>
+    <div>
+      <h1>Function Component Concepts</h1>
+      <hr/>
+      <div className='row'>
+        <div className='col-4'>
+          <Sidebar/>
+        </div>
+        <div className='col-8'>
+          <Routes>
+              <Route path='/' element={<Propsdemo/>}></Route>
+              <Route path='/event' element={<Eventdemo/>}></Route>
+              <Route path='/state' element={<Stateinfun/>}></Route>
+              <Route path='/condition' element={<ConditionalRendering/>}></Route>
+              <Route path='/form' element={<Form1/>}></Route>
+              <Route path='/list' element={<ListRendering/>}/>
+              
+          </Routes>
+        </div>
+      </div> 
+      
+
+        {/* <h1 className='text-primary'>Hello React</h1> */}
         {/* <h2>Welcome to React</h2>
         <p>Java</p> */}
         {/* <Firstfuncomp></Firstfuncomp> */}
@@ -50,7 +75,18 @@ function App() {
         {/* <Calculator/> */}
 
         {/* <Form1/> */}
-        <Form2/>
+        {/* <Form2/> */}
+{/* 
+        <button
+          type="button"
+          class="btn btn-primary" onClick={()=>setIsLoggedIn(!isLoggedIn)}
+        >
+          {isLoggedIn ? "Logout" : "Login"}
+        </button>
+        
+        
+
+        <ConditionalRendering isLog={isLoggedIn} username="Gaurav"></ConditionalRendering> */}
     </div>
 
 
