@@ -18,6 +18,8 @@ import Form2 from './components/04day/Form2';
 import ConditionalRendering from './components/05day/ConditionalRendering';
 import Sidebar from './components/Sidebar';
 import { Form, Route, Routes } from 'react-router-dom';
+import ListRendering from './components/05day/ListRendering';
+import ProductList from './components/05day/ProductList';
 function App() {
   let [isLoggedIn,setIsLoggedIn]=useState
   (true)    
@@ -36,7 +38,8 @@ function App() {
               <Route path='/state' element={<Stateinfun/>}></Route>
               <Route path='/condition' element={<ConditionalRendering/>}></Route>
               <Route path='/form' element={<Form1/>}></Route>
-              <Route path='/list' element={<ListRendering/>}/>
+              <Route path='/list' element={<ListRendering/>}></Route>
+              <Route path='/products' element={<ProductList/>}></Route>
               
           </Routes>
         </div>
