@@ -3,8 +3,8 @@ import Image1 from '../../assets/1.jpg'
 import Image2 from '../../assets/2.jpg'
 import Image3 from '../../assets/3.jpg'
 import Image4 from '../../assets/4.jpg'
-import Image5 from '../../assets/5.webp'
-import Image6 from '../../assets/6.jpeg'
+import Image5 from '../../assets/5.jpg'
+import Image6 from '../../assets/6.jpg'
 import Image7 from '../../assets/1.jpg'
 let Products = [
     {id:"1", name:"product1",price:2000,category:'grocery',brand:'brand1',image:Image1},
