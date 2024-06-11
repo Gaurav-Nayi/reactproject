@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link, Outlet } from 'react-router-dom'
 
 const ConditionalRendering = ({isLog,username}) => {
     /*if(isLog){
@@ -31,7 +32,9 @@ const ConditionalRendering = ({isLog,username}) => {
              <hr/>
              {(isLog && username=="Gaurav") ? <h1>Welcome Back</h1> : '' }
 
-
+                <Link type="button" class="btn btn-primary" to='/condition/cal'>Button</Link>
+                
+                <Outlet/>
         </>
     )
 }
