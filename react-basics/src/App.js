@@ -31,7 +31,7 @@ function App() {
         <div className='col-3'>
           <Sidebar/>
         </div>
-        <div className='col'>
+        <div className='col me-2'>
           <Outlet></Outlet>
         </div>
       </div> 
