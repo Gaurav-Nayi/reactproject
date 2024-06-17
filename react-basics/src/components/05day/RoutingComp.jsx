@@ -18,6 +18,11 @@ import FormValidations from '../07day/FormValidations'
 import ReactHookForm from '../08day/ReactHookForm'
 import Counter from '../08day/Counter'
 import RandomNumGenerator from '../08day/RandomNumGenerator'
+import RefDemoinFun from '../09day/RefDemoinFun'
+import Usememohook from '../09day/Usememohook'
+import FunRouting from '../FunRouting'
+import ClassRouting from '../ClassRouting'
+import ClassComp from '../09day/ClassComp'
 
 
 
@@ -26,6 +31,7 @@ const RoutingComp = () => {
         <>
             <Routes>
                 <Route path='/' element={<App />}>
+                    <Route path='/fun' element={<FunRouting/>}>
                     <Route path='' element={<Propsdemo />}></Route>
                     <Route path='event' element={<Eventdemo />}></Route>
                     <Route path='state' element={<Stateinfun />}></Route>
@@ -43,6 +49,12 @@ const RoutingComp = () => {
                     <Route path='reacthookform' element={<ReactHookForm/>}></Route>
                     <Route path='lifting' element={<Counter/>}></Route>
                     <Route path='random' element={<RandomNumGenerator/>}></Route>
+                    <Route path='ref' element={<RefDemoinFun/>}></Route>
+                    <Route path='hook/usememo' element={<Usememohook/>}></Route>
+                </Route>
+                <Route path='/class' element={<ClassRouting/>}>
+                    <Route path='' element={<ClassComp username="Happay" address="Ahmedabad"/>}></Route>
+                </Route>
                     
                 </Route>
                 <Route path="*" element={<PageNotFound/>}></Route>

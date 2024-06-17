@@ -17,25 +17,28 @@ import Form1 from './components/04day/Form1';
 import Form2 from './components/04day/Form2';
 import ConditionalRendering from './components/05day/ConditionalRendering';
 import Sidebar from './components/Sidebar';
-import { Form, Outlet, Route, Routes } from 'react-router-dom';
+import { Form, Link, Outlet, Route, Routes, useNavigate } from 'react-router-dom';
 import ListRendering from './components/05day/ListRendering';
 import ProductList from './components/05day/ProductList';
 function App() {
-  let [isLoggedIn,setIsLoggedIn]=useState
-  (true)    
+  let [isLoggedIn,setIsLoggedIn]=useState(true)    
+  
   return (
-    <div>
-      <h1>Function Component Concepts</h1>
-      <hr/>
-      <div className='row'>
-        <div className='col-3'>
-          <Sidebar/>
-        </div>
-        <div className='col me-2'>
-          <Outlet></Outlet>
-        </div>
-      </div> 
+    <>
       
+      <div className='container'>
+       
+          <Link to='/fun' type="button" class="btn btn-primary me-2" >Functional Component</Link>
+          <Link to='/class' type="button" class="btn btn-danger " >Class Component</Link>
+
+        
+        <div className='row mb-3'>
+          <Outlet/>
+
+        </div>
+        </div>
+      
+        
 
         {/* <h1 className='text-primary'>Hello React</h1> */}
         {/* <h2>Welcome to React</h2>
@@ -81,7 +84,7 @@ function App() {
         
 
         <ConditionalRendering isLog={isLoggedIn} username="Gaurav"></ConditionalRendering> */}
-    </div>
+    </>
 
 
     // React.createElement("div",{className:"App"},React.createElement("h1",{},"Hello JavaScript"),
