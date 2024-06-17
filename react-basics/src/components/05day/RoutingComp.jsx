@@ -23,6 +23,8 @@ import Usememohook from '../09day/Usememohook'
 import FunRouting from '../FunRouting'
 import ClassRouting from '../ClassRouting'
 import ClassComp from '../09day/ClassComp'
+import EventinClass from '../10day/EventinClass'
+import StateinClass from '../10day/stateinClass'
 
 
 
@@ -53,7 +55,9 @@ const RoutingComp = () => {
                     <Route path='hook/usememo' element={<Usememohook/>}></Route>
                 </Route>
                 <Route path='/class' element={<ClassRouting/>}>
-                    <Route path='' element={<ClassComp username="Happay" address="Ahmedabad"/>}></Route>
+                    <Route path='' element={<ClassComp username="Happy" address="Ahmedabad"/>}></Route>
+                    <Route path='event' element={<EventinClass  username="Happy" address="Ahmedabad"/>}></Route>
+                    <Route path='state' element={<StateinClass/>}></Route>
                 </Route>
                     
                 </Route>
