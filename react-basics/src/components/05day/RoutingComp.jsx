@@ -24,7 +24,9 @@ import FunRouting from '../FunRouting'
 import ClassRouting from '../ClassRouting'
 import ClassComp from '../09day/ClassComp'
 import EventinClass from '../10day/EventinClass'
-import StateinClass from '../10day/stateinClass'
+import StateinClass from '../10day/StateinClass'
+import Form1classcomp from '../10day/Form1classcomp'
+import RefDemoinClass from '../10day/RefDemoinClass'
 
 
 
@@ -58,6 +60,8 @@ const RoutingComp = () => {
                     <Route path='' element={<ClassComp username="Happy" address="Ahmedabad"/>}></Route>
                     <Route path='event' element={<EventinClass  username="Happy" address="Ahmedabad"/>}></Route>
                     <Route path='state' element={<StateinClass/>}></Route>
+                    <Route path='form' element={<Form1classcomp/>}></Route>
+                    <Route path='ref' element={<RefDemoinClass/>}></Route>
                 </Route>
                     
                 </Route>
