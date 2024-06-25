@@ -6,6 +6,7 @@ import Image4 from '/src/assets/4.jpg'
 import Image5 from '/src/assets/5.jpg'
 import Image6 from '/src/assets/6.jpg'
 import Image7 from '/src/assets/1.jpg'
+
 let Products = [
     {id:"1", name:"product1",price:2000,category:'grocery',brand:'brand1',image:Image1},
     {id:"2", name:"product2",price:4000,category:'electronics',brand:'brand2',image:Image2},
