@@ -5,7 +5,7 @@ import { toast } from 'react-toastify'
 import axios from 'axios'
 
 const Register = () => {
-    let obj = { username: '', email: '', password: '', cpassword: '', roll: '1' , id: Date.now()}
+    let obj = { username: '', email: '', password: '', cpassword: '', role: '1' , id: Date.now()}
     let [user, setUser] = useState({ ...obj })
     let [errors, setErors] = useState({})
     const redirect = useNavigate()
@@ -39,17 +39,17 @@ const Register = () => {
                 //     body: JSON.stringify(user)
                 // })
 
-                // await axios.post("https://667a8641bd627f0dcc8f5abe.mockapi.io/users",user)
-                // toast.success("Registered Successfuly")
-                // redirect('/login')
-
-                await fetch("http://localhost:1000/users", {
-                    method: "POST",
-                    headers: { 'content-type': 'application/json' },
-                    body: JSON.stringify(user)
-                })
+                await axios.post("https://667a8641bd627f0dcc8f5abe.mockapi.io/users",user)
                 toast.success("Registered Successfuly")
                 redirect('/login')
+
+                // // await fetch("http://localhost:1000/users", {
+                // //     method: "POST",
+                // //     headers: { 'content-type': 'application/json' },
+                // //     body: JSON.stringify(user)
+                // // })
+                // toast.success("Registered Successfuly")
+                // redirect('/login')
             }
             catch (err) {
                 toast.error(err.massage)

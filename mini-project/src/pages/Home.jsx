@@ -3,9 +3,7 @@ import React, { useEffect, useState } from 'react'
 
 const Home = () => {
 const [users,setUsers]=useState([])
-  useEffect(()=>{
-     getdata()
-  },[])
+  // useEffect(()=>{getdata()},[])
 
 
     // let getdata=()=>{
@@ -62,24 +60,24 @@ const [users,setUsers]=useState([])
     //   }
     // }  
   
-    let getdata=async()=>{
-      try{
-        let res = await axios.get('http://localhost:1000/users')
-        console.log(res)
-          setUsers(res.data)
-      }
-      catch(err){
-        console.log(err)
-      }
-    }  
+    // let getdata=async()=>{
+    //   try{
+    //     let res = await axios.get('http://localhost:1000/users')
+    //     console.log(res)
+    //       setUsers(res.data)
+    //   }
+    //   catch(err){
+    //     console.log(err)
+    //   }
+    // }  
   
   
     
   return (
     <>
       <h1>Home Page</h1>
-      {users.length==0 && <h1>No user found</h1>}
-      {users.map((user,i)=><h1>{user.name}</h1>)}
+      {/* {users.length==0 && <h1>No user found</h1>}
+      {users.map((user,i)=><h1>{user.name}</h1>)} */}
       {/* {users.map((user,i)=><h1>{user.firstName}</h1>)} */}
     </>
   )

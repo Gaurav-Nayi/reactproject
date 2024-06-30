@@ -5,6 +5,11 @@ import Home from "./pages/Home";
 import Login from "./pages/Login";
 import Register from "./pages/Register";
 import ProductData from "./features/ProductData";
+import AdminLayout from "./features/Admin/AdminLayout";
+import Dashboard from "./features/Admin/Dashboard";
+import AddProduct from "./features/Admin/AddProduct";
+import ViewProduct from "./features/Admin/ViewProduct";
+import { Protected, ProtectedAdmin } from "./features/Admin/hiddenlinks";
 
 
 const allroutes = createBrowserRouter([
@@ -14,6 +19,14 @@ const allroutes = createBrowserRouter([
             { path: 'login' , element:<Login/>},
             { path: 'register' , element:<Register/>},
             { path: 'products' , element:<ProductData/>}
+        ]
+    },
+    {path:'/admin', element:<ProtectedAdmin><AdminLayout/></ProtectedAdmin>,
+        children:[
+            {path:'dash', element:<Dashboard/>},
+            {path:'add', element:<AddProduct/>},
+            {path:'view', element:<ViewProduct/>},
+            {path:'edit/:id', element:<AddProduct/>},
         ]
     },
     {path:"*" , element:<PageNotFound />}
