@@ -1,14 +1,18 @@
-import React, { useEffect, useState } from 'react'
+import React, { useContext, useEffect, useState } from 'react'
 import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import { NavLink, useNavigate } from 'react-router-dom';
 import { BsArrowLeftCircle, BsHouse } from "react-icons/bs";
-import { FaLock, FaPen, FaPenAlt } from 'react-icons/fa';
+import { FaLock, FaPen, FaPenAlt, FaShoppingCart } from 'react-icons/fa';
 import { ShowOnLogin, ShowOnLogout } from './Admin/hiddenlinks';
 import { toast } from 'react-toastify';
+import { MyContext } from './ContextData';
 
 const Header = () => {
+const data = useContext(MyContext)
+console.log(data)
+
   const [username,setUsername]=useState('Guest')
   useEffect(()=>{
     if(sessionStorage.getItem("11apr") != undefined){
@@ -67,6 +71,11 @@ const Header = () => {
               }}> <FaPenAlt /> Register</Nav.Link>
             </ShowOnLogout>
             <ShowOnLogin>
+
+            <Nav.Link as={NavLink} to='/cart'><FaShoppingCart size={30}/>
+            <span class="badge rounded-pill text-bg-danger">{data.cartItems.length}</span>
+            </Nav.Link>
+
               <Nav.Link >Welcome {username}</Nav.Link>
               <Nav.Link onClick={handlelogout}><BsArrowLeftCircle/>LogOut</Nav.Link>
             </ShowOnLogin>

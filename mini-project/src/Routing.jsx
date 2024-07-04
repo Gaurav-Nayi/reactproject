@@ -10,6 +10,7 @@ import Dashboard from "./features/Admin/Dashboard";
 import AddProduct from "./features/Admin/AddProduct";
 import ViewProduct from "./features/Admin/ViewProduct";
 import { Protected, ProtectedAdmin } from "./features/Admin/hiddenlinks";
+import Cart from "./features/Cart";
 
 
 const allroutes = createBrowserRouter([
@@ -18,7 +19,9 @@ const allroutes = createBrowserRouter([
             { path: '' , element:<Home />},
             { path: 'login' , element:<Login/>},
             { path: 'register' , element:<Register/>},
-            { path: 'products' , element:<ProductData/>}
+            { path: 'products' , element:<ProductData/>},
+            { path: 'cart' , element:<Protected><Cart/></Protected>},
+
         ]
     },
     {path:'/admin', element:<ProtectedAdmin><AdminLayout/></ProtectedAdmin>,
