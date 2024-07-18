@@ -5,22 +5,35 @@ import Navbar from 'react-bootstrap/Navbar';
 import { NavLink, useNavigate } from 'react-router-dom';
 import { BsArrowLeftCircle, BsHouse } from "react-icons/bs";
 import { toast } from 'react-toastify';
+import { useDispatch, useSelector } from 'react-redux';
+import { LOGOUT_USER, selectIsLoggedIn, selectUserName } from '../../redux/authSlice';
 
 const ANavbar = () => {
-  const [username,setUsername]=useState('Guest')
+const dispatch = useDispatch()  
+const [username,setUsername]=useState('Guest')
+const data = useSelector(selectUserName)
+const isLoggedIn = useSelector(selectIsLoggedIn)
+
+console.log(data)
   useEffect(()=>{
-    if(sessionStorage.getItem("11apr") != undefined){
-      let obj=JSON.parse(sessionStorage.getItem("11apr"))
-      setUsername(obj.name)
+    if(data!=null){
+      setUsername(data)
+
     }
-  },[sessionStorage.getItem("11apr")])
+    else{
+      setUsername('Guest')
+    }
+  },[isLoggedIn])
+
 
   const navigate=useNavigate()
   let handlelogout=()=>{
-    sessionStorage.removeItem("11apr")
+    dispatch(LOGOUT_USER())
     toast.success("loggedout successfully ")
     navigate('/')
-  }
+    
+}
+
   return (
     <Navbar expand="lg" bg="dark" data-bs-theme="dark">
       <Container fluid>

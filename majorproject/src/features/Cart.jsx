@@ -1,14 +1,11 @@
 import React, { useContext, useEffect } from 'react'
-import { MyContext } from './ContextData'
+
 import { FaArrowAltCircleLeft, FaTrashAlt } from 'react-icons/fa'
 import { Link } from 'react-router-dom'
 
 const Cart = () => {
-  const data=useContext(MyContext)
-  let {cartItems,total,increase,decrease,removefromcart,emptycart,calculate_total}=data
-  useEffect(()=>{
-      calculate_total()
-  },[cartItems])
+  
+  
   return (
     <div className='container mt-5 shadow p-2'>
       <h1>cart page</h1>
@@ -27,7 +24,7 @@ const Cart = () => {
               <th>Remove</th>
             </tr>
           </thead>
-          <tbody>
+          {/* <tbody>
             {cartItems.length==0 && <tr><td colspan={7}>No Item in Cart</td></tr>}
             {cartItems.map((c,i)=>
             <tr key={i}>
@@ -45,10 +42,10 @@ const Cart = () => {
               </td>
             </tr>
             )}
-          </tbody>
+          </tbody> */}
         </table>
       </div>
-     <div className="row">
+     {/* <div className="row">
       <div className='col-9'>
       <button type="button" class="btn btn-danger btn-lg" onClick={()=>emptycart()}><FaTrashAlt/>Empty Cart</button><br/>
       <Link to='/products'><FaArrowAltCircleLeft/>Continue Shopping</Link>
@@ -62,7 +59,7 @@ const Cart = () => {
         </div>
         
       </div>
-      </div> 
+      </div>  */}
     </div>
   )
 }
