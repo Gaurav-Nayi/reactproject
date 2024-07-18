@@ -1,13 +1,15 @@
-  import React from 'react'
+  import React, { useState } from 'react'
 import { Button, Col, Container, Form, Image, Row } from 'react-bootstrap'
 import { useForm } from 'react-hook-form'
 import LoginImg from '/src/assets/1.jpg'
 import { Link, useNavigate } from 'react-router-dom'
 import { toast } from 'react-toastify'
 import axios from 'axios'
+import Loader from '../features/Loader'
 
 const Login = () => {
   const {register , handleSubmit , formState:{errors} , trigger , getValues} = useForm()
+  let [isLoading,setIsLoading]=useState(false)
   const redirect =useNavigate()
     let submitData=async(user)=>{
         // alert(JSON.stringify(user))
@@ -21,6 +23,7 @@ const Login = () => {
             //    toast.error("Invalid Credentials")
             // } 
 
+            setIsLoading(true)
             let res = await axios.get(`https://667a8641bd627f0dcc8f5abe.mockapi.io/users?email=${user.email}`)
             if(res.data[0].password == user.password){
               console.log("gkjgk")
@@ -35,17 +38,22 @@ const Login = () => {
 
               let obj = {isLoggedIn:true , email:res.data[0].email , name:res.data[0].username , role:res.data[0].role}
               sessionStorage.setItem("11apr",JSON.stringify(obj))
+              setIsLoading(false)
             }
             else{
+              setIsLoading(false)
               toast.error("Invalid Credentials")
             }
            
         }
         catch(err){
+          setIsLoading(false)
           toast.error("Invalid Credentials")
         }
     }
   return (
+    <>
+    {isLoading && <Loader/>}
     <Container className='col-8 shadow mt-5 p-3'>
       <h1>Login Page</h1><hr/>
         <Row>
@@ -76,6 +84,7 @@ const Login = () => {
             </Col>
         </Row>      
     </Container>
+    </>
   )
 }
 

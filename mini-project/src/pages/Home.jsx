@@ -2,6 +2,7 @@ import axios from 'axios'
 import React, { useEffect, useState } from 'react'
 import Slider from '../features/Admin/Slider'
 
+
 const Home = () => {
 const [users,setUsers]=useState([])
   // useEffect(()=>{getdata()},[])
@@ -76,6 +77,7 @@ const [users,setUsers]=useState([])
     
   return (
     <>
+  
     <Slider/>
       <h1>Home Page</h1>
       {/* {users.length==0 && <h1>No user found</h1>}

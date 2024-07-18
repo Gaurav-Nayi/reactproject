@@ -1,0 +1,53 @@
+{
+  "users": [
+    {
+      "id": "3ba2",
+      "username": "ram",
+      "email": "ram@gmail.com",
+      "password": "123456",
+      "cpassword": "123456",
+      "role": "1"
+    },
+    {
+      "id": "bf46",
+      "username": "happy",
+      "email": "happy@gmail.com",
+      "password": "123456",
+      "cpassword": "123456",
+      "role": "1",
+      "createdAt": 1721209073365
+    },
+    {
+      "id": "75e5",
+      "username": "Admin",
+      "email": "admin@gmail.com",
+      "password": "123456",
+      "cpassword": "123456",
+      "role": "0",
+      "createdAt": 1721209143232
+    },
+    {
+      "id": "e6b5",
+      "username": "zzz",
+      "email": "zzz@gmail.com",
+      "password": "123456",
+      "cpassword": "123456",
+      "role": "1",
+      "createdAt": 1721279357333
+    },
+    {
+      "id": "fa57",
+      "username": "qwe",
+      "email": "qwe@gmail.com",
+      "password": "123456",
+      "cpassword": "123456",
+      "role": "1",
+      "createdAt": 1721280565309
+    }
+  ],
+  "products": [],
+  "sliders": [],
+  "orders": [],
+  "cart": [],
+  "category":[]
+}

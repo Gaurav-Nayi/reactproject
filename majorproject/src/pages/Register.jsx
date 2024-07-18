@@ -2,13 +2,13 @@ import React, { useState } from 'react'
 import Image1 from '/src/assets/2.jpg'
 import { Link, useNavigate } from 'react-router-dom'
 import { toast } from 'react-toastify'
-import axios from 'axios'
+
 import Loader from '../features/Loader'
 
 const Register = () => {
-    let obj = { username: '', email: '', password: '', cpassword: '', role: '1' , id: Date.now()}
+    let obj = { username: '', email: '', password: '', cpassword: '', role: '1' }
     let [user, setUser] = useState({ ...obj })
-    let [errors, setErors] = useState({})
+    let [errors, setErrors] = useState({})
     let [isLoading,setIsLoading] = useState(false)
 
     const redirect = useNavigate()
@@ -31,27 +31,19 @@ const Register = () => {
         e.preventDefault()
         let myerrors = validations()
         if (Object.keys(myerrors).length == 0) {
-            setErors({})
+            setErrors({})
             setUser({ ...obj })
-            //   alert(JSON.stringify(user))
+            
             try {
-                // await fetch("https://667a8641bd627f0dcc8f5abe.mockapi.io/users", {
-                //     method: "POST",
-                //     headers: { 'content-type': 'application/json' },
-                //     body: JSON.stringify(user)
-                // })
-
-                // await axios.post("https://667a8641bd627f0dcc8f5abe.mockapi.io/users",user)
-                // toast.success("Registered Successfuly")
-                // redirect('/login')
+                
 
                 setIsLoading(true)
-                await fetch("https://667a8641bd627f0dcc8f5abe.mockapi.io/users", {
+                await fetch("http://localhost:1000/users", {
                     method: "POST",
                     headers: { 'content-type': 'application/json' },
-                    body: JSON.stringify(user)
+                    body: JSON.stringify({...user,createdAt:Date.now()})
                 })
-                toast.success("Registered Successfuly")
+                toast.success("Registered Successfully")
                 redirect('/login')
                 setIsLoading(false)
             }
@@ -61,7 +53,7 @@ const Register = () => {
             }
         }
         else {
-            setErors(myerrors)
+            setErrors(myerrors)
         }
 
     }

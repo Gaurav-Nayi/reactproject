@@ -1,17 +1,8 @@
 import { Navigate } from "react-router-dom"
+import { selectIsLoggedIn } from "../../redux/authSlice"
+import { useSelector } from "react-redux"
 
-export const ShowOnLogout=({children})=>{
-    if(sessionStorage.getItem('11apr') == null){
-        return children
-    }
-    else return null
-}
-export const ShowOnLogin=({children})=>{
-    if(sessionStorage.getItem('11apr') != null){
-        return children
-    }
-    else return null
-}
+
 
 export const ProtectedAdmin=({children})=>{
     if(sessionStorage.getItem('11apr') != null){
