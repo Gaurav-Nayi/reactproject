@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react'
-import useFetchCollection from '../customhook/useFetchCollection'
 import { useDispatch, useSelector } from 'react-redux'
-import { selectsliders, store_slider } from '../redux/sliderSlice'
+import { selectsliders, store_slider } from '../../redux/sliderSlice'
+import useFetchCollection from '../../customhook/useFetchCollection'
 const Slider = () => {
   const {data}=useFetchCollection("sliders")
     const dispatch = useDispatch()

@@ -9,7 +9,7 @@ const useFetchCollection = (collectionname) => {
    
     useEffect(()=>{fetchData()},[])
 
-    let fetchData=async()=>{
+    let fetchData=async()=>{  
         setIsLoading(true)
         try{
             const docRef=collection(db,collectionname)

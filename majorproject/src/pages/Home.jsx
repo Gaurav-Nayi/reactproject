@@ -4,7 +4,7 @@ import Slider from '../features/Admin/Slider'
 
 
 const Home = () => {
-  console.log(import.meta.env.VITE_BACKEND_URL)
+  // console.log(import.meta.env.VITE_BACKEND_URL)
 return (
     <>
   

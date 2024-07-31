@@ -5,17 +5,20 @@ import {getFirestore} from 'firebase/firestore'
 import {getStorage} from 'firebase/storage'
 
 const firebaseConfig = {
-  apiKey: "AIzaSyAnSgmRKWl86ZVQRKZvaUwIYC-L05goEEw",
-  authDomain: "apr11-30-react.firebaseapp.com",
-  projectId: "apr11-30-react",
-  storageBucket: "apr11-30-react.appspot.com",
-  messagingSenderId: "947994375326",
-  appId: "1:947994375326:web:bd13e69395a80c34adf78f"
+  apiKey: "AIzaSyBnuXcn0g3pU3DoMochK93Vfl36lH8pFAM",
+  authDomain: "apr11-30-react-3c355.firebaseapp.com",
+  projectId: "apr11-30-react-3c355",
+  storageBucket: "apr11-30-react-3c355.appspot.com",
+  messagingSenderId: "1078304735562",
+  appId: "1:1078304735562:web:28ed23d112381ebb4841b3"
 };
+
+// Initialize Firebase
+
 
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
 export const auth = getAuth(app)
 export const db = getFirestore(app)
 export const storage=getStorage(app)
-export default app
+export default app  

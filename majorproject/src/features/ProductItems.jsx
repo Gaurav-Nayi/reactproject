@@ -4,7 +4,7 @@ import Loader from './Loader'
 import ReactPaginate from 'react-paginate'
 
 const ProductItems = ({products}) => {
-  let itemsPerPage = 3
+  let itemsPerPage = 2
   const [itemOffset, setItemOffset] = useState(0);
   const [currentItems ,setCurrentItems ]=useState([])
   const [pageCount,setPageCount]=useState(0)
@@ -24,6 +24,7 @@ const ProductItems = ({products}) => {
     <div className='container mt-5'>
       {products.length == 0 && <h1>No product found</h1>}
       <div className="row mb-3">
+        {console.log(currentItems)}
       {currentItems.map((product)=><ProductCard key={product.id} product={product}/>)}
       </div>
       <ReactPaginate
@@ -48,4 +49,4 @@ const ProductItems = ({products}) => {
   )
 }
 
-export default ProductItems;
+export default ProductItems

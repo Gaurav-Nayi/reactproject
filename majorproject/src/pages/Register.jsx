@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import Image1 from '/src/assets/register.png'
+import Image1 from '/src/assets/2.jpg'
 import { Link, useNavigate } from 'react-router-dom'
 import { toast } from 'react-toastify'
 import Loader from '../features/Loader'
@@ -41,7 +41,7 @@ const Register = () => {
                     toast.success("loggedIn Successfully")
                     redirect('/')
             })
-            .catch((error) => { toast.error(err.message);  setIsLoading(false)
+            .catch((error) => { toast.error(error.message);  setIsLoading(false)
             });
     }
       else { setErrors(myerrors)  }    

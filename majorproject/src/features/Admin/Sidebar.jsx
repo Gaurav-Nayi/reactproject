@@ -3,7 +3,7 @@ import Nav from 'react-bootstrap/Nav';
 import { NavLink ,Link} from 'react-router-dom';
 import './Sidebar.css'
 const Sidebar = ({ isOpen,onClose}) => {
-  console.log(isOpen)
+  // consol.log(isOpen)
   const sidebarClass = isOpen ? 'sidebar d-block' : 'sidebar d-none';
   
   let mylinks = [
@@ -14,6 +14,7 @@ const Sidebar = ({ isOpen,onClose}) => {
     {as:NavLink,to:'/admin/view/slider',text:'View Slider'},
     {as:NavLink,to:'/admin/add/product',text:'Add Product'},
     {as:NavLink,to:'/admin/view/product',text:'View Products'},
+    {as:NavLink,to:'/admin/view/orders',text:'View Orders'},
   ]
   return (
   <> 

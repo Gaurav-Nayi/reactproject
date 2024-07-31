@@ -14,6 +14,11 @@ import AddCategory from "./features/Admin/AddCategory";
 import ViewCategory from "./features/Admin/ViewCategory";
 import AddSlider from "./features/Admin/AddSlider";
 import ViewSlider from "./features/Admin/ViewSlider";
+import CheckoutDetails from "./features/CheckoutDetails";
+import { Protected, ProtectedAdmin } from "./features/Admin/hiddenlinks";
+import Checkout from "./features/Checkout";
+import CheckoutPayment from "./features/CheckoutPayment";
+import CheckoutSuccess from "./features/CheckoutSuccess";
 
 const allroutes = createBrowserRouter([
     { path: "/", element: <App /> , 
@@ -23,9 +28,13 @@ const allroutes = createBrowserRouter([
             {path:'register',element:<Register/>},
             {path:'products',element:<ProductData/>},
             {path:'cart',element:<Cart/>},
+            {path:'checkout-details',element:<Protected><CheckoutDetails/></Protected>},
+            {path:'checkout',element:<Protected><Checkout/></Protected>},
+            {path:'checkout-payment',element:<Protected><CheckoutPayment/></Protected>},
+            {path:'checkout-success',element:<CheckoutSuccess/>},
         ]
      },
-     {path:'/admin',element:<AdminLayout/>,
+     {path:'/admin',element:<ProtectedAdmin><AdminLayout/></ProtectedAdmin>,
         children:[
             {path:'dash',element:<Dashboard/>},
             {path:'add/category',element:<AddCategory/>},
@@ -36,6 +45,7 @@ const allroutes = createBrowserRouter([
             {path:'view/slider',element:<ViewSlider/>},
             {path:'add/product',element:<AddProduct/>},
             {path:'view/product',element:<ViewProduct/>},
+            {path:'edit/product/:id',element:<AddProduct/>},
         ]
      },
      {path:'*',element:<PageNotFound/>}
