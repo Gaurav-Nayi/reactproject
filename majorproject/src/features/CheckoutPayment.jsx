@@ -14,7 +14,7 @@ const CheckoutPayment = () => {
 
     useEffect(() => {
       // Create PaymentIntent as soon as the page loads
-      fetch("http://localhost:1000/create-payment-intent", {
+      fetch("https://reactproject-firebase-node.vercel.app/create-payment-intent", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ totalAmount }),
