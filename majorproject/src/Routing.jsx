@@ -19,6 +19,7 @@ import { Protected, ProtectedAdmin } from "./features/Admin/hiddenlinks";
 import Checkout from "./features/Checkout";
 import CheckoutPayment from "./features/CheckoutPayment";
 import CheckoutSuccess from "./features/CheckoutSuccess";
+import MyOrders from "./features/MyOrders";
 
 const allroutes = createBrowserRouter([
     { path: "/", element: <App /> , 
@@ -32,6 +33,7 @@ const allroutes = createBrowserRouter([
             {path:'checkout',element:<Protected><Checkout/></Protected>},
             {path:'checkout-payment',element:<Protected><CheckoutPayment/></Protected>},
             {path:'checkout-success',element:<CheckoutSuccess/>},
+            {path:'myorders',element:<MyOrders/>},
         ]
      },
      {path:'/admin',element:<ProtectedAdmin><AdminLayout/></ProtectedAdmin>,

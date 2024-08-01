@@ -90,6 +90,7 @@ navigate('/products')
               class="badge rounded-pill text-bg-danger">{cartItems.length}</span>
         </Nav.Link>
           <ShowOnLogin>
+          <Nav.Link as={NavLink} to='/myorders'>My Orders</Nav.Link> 
            <Nav.Link >Welcome {username}</Nav.Link>
            <Nav.Link onClick={handleLogout}><BsArrowLeftCircle />Logout</Nav.Link>
            </ShowOnLogin>
